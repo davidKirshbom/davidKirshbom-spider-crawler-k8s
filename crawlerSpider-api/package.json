@@ -1,0 +1,28 @@
+{
+  "name": "spider-crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "env-cmd -f ./src/config/dev.env nodemon src/index.js",
+    "start-crawler": "env-cmd -f ./src/config/dev.env nodemon src/utils/crawler.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.875.0",
+    "axios": "^0.21.1",
+    "bluebird": "^3.7.2",
+    "cors": "^2.8.5",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "node-html-parser": "^2.1.0",
+    "redis": "^3.0.2",
+    "socket.io": "^3.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
