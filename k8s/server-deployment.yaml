@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: server
+  template:
+    metadata:
+      labels:
+        component: server
+    spec:
+      containers:
+        - name: server
+          image: davkir/spider-crawler-server
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service
+            - name: REDIS_PORT
+              value: "6379"
+            - name: AWS_ACCESS_KEY_ID
+              value:
+            - name: AWS_SECRET_ACCESS_KEY
+              value:
+            - name: AWS_REGION
+              value: eu-west-1
